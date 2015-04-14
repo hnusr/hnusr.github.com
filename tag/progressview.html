@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>人生如梦的博客 - android studio</title>
+        <title>人生如梦的博客 - ProgressView</title>
         <meta charset="utf-8" />
 
 
@@ -52,37 +52,49 @@
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/android/20150328.html" rel="bookmark" title="Permalink to Android Studio 快捷键收集">Android Studio 快捷键收集</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="/android/20150414.html" rel="bookmark" title="Permalink to android之定义进度条">android之定义进度条</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2015-03-28T00:00:00+08:00"> 星期六 28 三月 2015 </abbr>
+                                    <abbr class="published" title="2015-04-14T00:00:00+08:00"> 星期二 14 四月 2015 </abbr>
                                     <address class="vcard author">By 
                                     <a class="url fn" href="/author/hnusr.html"> hnusr</a>
                                     </address>
                                 </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>快捷键太多，只大概列出一些，其余的边在工作中边尝试了</p>
-<h4>代码编辑方面</h4>
+                                <div class="entry-content"> <p>自定义View中，一直对进度条有些喜爱，今天就特意记录一下学习过程，先上效果图：</p>
+<h2><img alt="效果图" src="/images/arcProgressView.png" /></h2>
+<h4>基本设置</h4>
 <hr />
-<ol>
-<li>Alt + 回车 导入包,自动修正，改变属性private,public等</li>
-<li>Ctrl + Alt + L  格式化代码</li>
-<li>Ctrl + Alt + O 优化导入的类和包</li>
-<li>Alt + Insert 生成代码(如get,set方法,构造函数等)</li>
-<li>Ctrl + Space 代码提示，在声明一个变量时代码完成特性会给你显示一个建议名。开始键入“ private FileOutputStream ”</li>
-<li>Ctrl + Shift + Space 自动补全代码，实例化一个已知类型对象时很有用</li>
-<li>Shift + F6  重构-重命名</li>
-<li>Ctrl + X 删除行</li>
-<li>Ctrl + D 复制行</li>
-<li>Ctrl + / 或 Ctrl + Shift + /  注释 ...</li></ol> </div><!-- /.entry-content -->
+<p>1、基础定义</p>
+<div class="highlight"><pre>    /** 边框宽度 */
+    protected static final float DEFAULT_STROKE_WIDTH = DisplayUtils.dip2px(10);
 
-                                <div class="medium primary btn"><a href="/android/20150328.html" rel="bookmark" title="Permalink to Android Studio 快捷键收集">Read more <i class="icon-arrow-right"></i></a></div>
+    /** 当前进度值 */
+    private int progress = 0;
+
+    /** 进度最大值 */
+    private int progressMax = 100;
+</pre></div>
+
+
+<p>2、先设置底部背景弧线Paint画笔，不填充只描边，灰色，宽度随意</p>
+<div class="highlight"><pre>    // 背景
+    unfinishedPaint.setColor(Color.LTGRAY);
+    unfinishedPaint.setStrokeWidth(DEFAULT_STROKE_WIDTH);
+    unfinishedPaint.setStyle(Paint.Style.STROKE);
+    unfinishedPaint.setStrokeCap(Paint.Cap.ROUND);
+</pre></div>
+
+
+<p>3 ...</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="/android/20150414.html" rel="bookmark" title="Permalink to android之定义进度条">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/android-studio.html">android studio</a>
+                                            <a class="danger label" href="/tag/progressview.html">ProgressView</a>
                                             <a class="danger label" href="/tag/android.html">android</a>
-                                            <a class="danger label" href="/tag/kuai-jie-jian.html">快捷键</a>
+                                            <a class="danger label" href="/tag/zi-ding-yi.html">自定义</a>
                                 </div>
 
 
