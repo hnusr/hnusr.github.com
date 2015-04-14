@@ -8,6 +8,7 @@ SITEURL = ''
 KEYWORD = 'android, java, web'
 
 PATH = 'content'
+STATIC_PATHS = [u"images"]
 
 TIMEZONE = 'Asia/Shanghai'
 DEFAULT_LANG = u'zh'
